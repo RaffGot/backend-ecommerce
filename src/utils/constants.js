@@ -1,9 +1,13 @@
 const ROUTES = Object.freeze({
   API: "/api",
   HOME: "/",
+
   PRODUCTS: "/products",
   PRODUCT: "/product/:id",
+
+  USERS: "/users",
   USER: "/user/:id",
+
   LOGIN: "/login",
   REGISTER: "/register",
   LOGOUT: "/logout",
@@ -23,6 +27,7 @@ const ROUTES = Object.freeze({
 
 const MONGODB_COLLECTIONS = Object.freeze({
   PRODUCT: "product",
+  USER: "user",
 });
 
 const SWAGGUER_OPTIONS = Object.freeze({

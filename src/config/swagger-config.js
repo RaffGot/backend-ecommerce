@@ -15,7 +15,11 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ["src/routes/product.routes.js"], // files containing annotations as above
+  apis: [
+    "src/routes/product.routes.js",
+    "src/routes/user.routes.js",
+    "src/routes/auth.routes.js",
+  ], // files containing annotations as above
 };
 
 const swaggerDocs = swaggerJSDoc(swaggerOptions);

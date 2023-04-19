@@ -11,7 +11,7 @@ class ProductCreationError extends Error {
   constructor(message) {
     super(message);
     this.name = "ProductCreationError";
-    this.statusCode = 500;
+    this.statusCode = 500;    
   }
 }
 

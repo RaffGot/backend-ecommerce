@@ -8,7 +8,10 @@ const port = process.env.PORT || 3000;
 const mongoose = require("mongoose");
 const { SWAGGUER_OPTIONS, ROUTES } = require("./src/utils/constants");
 const swaggerDocs = require("./src/config/swagger-config");
+const { authMiddleware } = require("./src/middlewares/auth.middleware");
 const productRouter = require("./src/routes/product.routes");
+const userRouter = require("./src/routes/user.routes");
+const authRouter = require("./src/routes/auth.routes");
 // user router
 
 app.use(bodyParser.json());
@@ -37,6 +40,9 @@ app.get(ROUTES.HOME, (req, res) => {
   res.send("hello world !");
 });
 
+app.use(ROUTES.API, authRouter);
+app.use(ROUTES.API, authMiddleware);
+app.use(ROUTES.API, userRouter);
 app.use(ROUTES.API, productRouter);
 
 app.listen(port, () => console.log(`Exemple app listening on port :${port}`));
