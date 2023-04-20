@@ -22,5 +22,4 @@ async function authController(req, res, next) {
 
 module.exports = {
   authController,
-  authMiddleware,
 };

@@ -11,7 +11,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/users:
+ * /private/api/users:
  *   get:
  *     summary: Returns the list of all users
  *     tags:
@@ -24,7 +24,7 @@ const router = express.Router();
 router.get(ROUTES.USERS, getUsers);
 /**
  * @swagger
- * /api/user/{id}:
+ * /private/api/user/{id}:
  *   get:
  *     summary: Returns specific user
  *     tags:
@@ -44,7 +44,7 @@ router.get(ROUTES.USERS, getUsers);
 router.get(ROUTES.USER, getUser);
 /**
  * @swagger
- * /api/users:
+ * /private/api/users:
  *   post:
  *     summary: Creates a new user
  *     tags:
@@ -79,7 +79,7 @@ router.get(ROUTES.USER, getUser);
 router.post(ROUTES.USERS, postUser);
 /**
  * @swagger
- * /api/user/{userId}:
+ * /private/api/user/{userId}:
  *   put:
  *     summary: Updates an existing user
  *     tags:
@@ -119,7 +119,7 @@ router.post(ROUTES.USERS, postUser);
 router.put(ROUTES.USER, putUser);
 /**
  * @swagger
- * /api/user/{userId}:
+ * /private/api/user/{userId}:
  *   delete:
  *     summary: Deletes an existing user
  *     tags:

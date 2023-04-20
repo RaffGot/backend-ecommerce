@@ -3,8 +3,9 @@ const {
   JWT_ACCESS_SECRET,
   JWT_REFRESH_SECRET,
 } = require("../config/jwt.config");
+const { AUTH_TYPES } = require("../utils/constants");
 
-function authMiddleware(type) {
+const authMiddleware = () => {
   return (req, res, next) => {
     const auth = req.headers["Authorization"] || req.headers["authorization"];
 
@@ -14,12 +15,18 @@ function authMiddleware(type) {
 
     const [authType, token] = auth.split(" ");
 
-    if (!authType || !token || authType.toLowerCase() !== type.toLowerCase()) {
+    if (
+      !authType ||
+      !token ||
+      authType.toLowerCase() !== AUTH_TYPES.BEARER.toLowerCase()
+    ) {
       return res.status(401).json({ message: "Invalid authorization header" });
     }
 
     const secret =
-      type.toLowerCase() === "bearer" ? JWT_ACCESS_SECRET : JWT_REFRESH_SECRET;
+      AUTH_TYPES.BEARER.toLowerCase() === "bearer"
+        ? JWT_ACCESS_SECRET
+        : JWT_REFRESH_SECRET;
 
     jwt.verify(token, secret, (err, decoded) => {
       if (err) {
@@ -29,6 +36,6 @@ function authMiddleware(type) {
       next();
     });
   };
-}
+};
 
-module.exports = { authMiddleware };
+module.exports = {authMiddleware};

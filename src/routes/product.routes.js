@@ -11,7 +11,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /api/products:
+ * /private/api/products:
  *   get:
  *     summary: Returns the list of all products
  *     tags:
@@ -24,7 +24,7 @@ const router = express.Router();
 router.get(ROUTES.PRODUCTS, getProducts);
 /**
  * @swagger
- * /api/product/{id}:
+ * /private/api/product/{id}:
  *   get:
  *     summary: Returns specific product
  *     tags:
@@ -44,7 +44,7 @@ router.get(ROUTES.PRODUCTS, getProducts);
 router.get(ROUTES.PRODUCT, getProduct);
 /**
  * @swagger
- * /api/products:
+ * /private/api/products:
  *   post:
  *     summary: Creates a new product
  *     tags:
@@ -88,7 +88,7 @@ router.get(ROUTES.PRODUCT, getProduct);
 router.post(ROUTES.PRODUCTS, postProduct);
 /**
  * @swagger
- * /api/product/{productId}:
+ * /private/api/product/{productId}:
  *   put:
  *     summary: Updates an existing product
  *     tags:
@@ -138,7 +138,7 @@ router.post(ROUTES.PRODUCTS, postProduct);
 router.put(ROUTES.PRODUCT, putProduct);
 /**
  * @swagger
- * /api/product/{productId}:
+ * /private/api/product/{productId}:
  *   delete:
  *     summary: Deletes an existing product
  *     tags:

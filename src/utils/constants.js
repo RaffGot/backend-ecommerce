@@ -2,6 +2,9 @@ const ROUTES = Object.freeze({
   API: "/api",
   HOME: "/",
 
+  PUBLIC:"/public",
+  PRIVATE:"/private",
+
   PRODUCTS: "/products",
   PRODUCT: "/product/:id",
 
@@ -34,4 +37,8 @@ const SWAGGUER_OPTIONS = Object.freeze({
   API_DOCS: "/api-docs",
 });
 
-module.exports = { ROUTES, MONGODB_COLLECTIONS, SWAGGUER_OPTIONS };
+const AUTH_TYPES = Object.freeze({
+  BEARER: "bearer",
+});
+
+module.exports = { ROUTES, MONGODB_COLLECTIONS, SWAGGUER_OPTIONS, AUTH_TYPES };
